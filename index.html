@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Student attendance tracker demonstrating arrays.">
+<title>ClassTrack — Attendance Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><div class="hero-inner">
+<p class="eyebrow">ARRAYS IN THE REAL WORLD</p><h1>ClassTrack</h1>
+<p class="subtitle">A simple student attendance manager</p>
+</div></header>
+<main class="container">
+<section class="summary-grid">
+<article class="summary-card"><span>Total students</span><strong id="totalCount">0</strong></article>
+<article class="summary-card"><span>Present today</span><strong id="presentCount">0</strong></article>
+<article class="summary-card"><span>Absent today</span><strong id="absentCount">0</strong></article>
+</section>
+<section class="panel">
+<div class="section-heading"><h2>Add a student</h2><p>Student records are stored in an array.</p></div>
+<form id="studentForm" class="student-form">
+<label>Student name<input id="studentName" placeholder="e.g. Ama Mensah" required maxlength="80"></label>
+<label>Student ID<input id="studentId" placeholder="e.g. STU-001" required maxlength="30"></label>
+<button class="button primary" type="submit">Add student</button>
+</form><p id="formMessage" class="message" role="status"></p>
+</section>
+<section class="panel">
+<div class="section-heading row"><div><h2>Attendance register</h2><p>Mark each student present or absent for the selected date.</p></div>
+<label class="date-label">Attendance date<input id="attendanceDate" type="date"></label></div>
+<div class="toolbar"><input id="searchInput" type="search" placeholder="Search by name or student ID…" aria-label="Search students">
+<select id="filterSelect" aria-label="Filter students"><option value="all">All students</option><option value="present">Present</option><option value="absent">Absent</option><option value="unmarked">Not marked</option></select>
+<button id="exportButton" class="button secondary" type="button">Export CSV</button></div>
+<div class="table-wrap"><table><thead><tr><th>Student ID</th><th>Name</th><th>Status</th><th>Mark attendance</th><th></th></tr></thead><tbody id="studentTable"></tbody></table>
+<div id="emptyState" class="empty-state">No students yet. Add a student above to begin.</div></div>
+<p class="footnote">Demo data is saved in this browser using local storage. It is not sent to a server.</p>
+</section>
+<section class="explain"><h2>Where arrays are used here</h2>
+<p>The app uses a <code>students</code> array for student records and an <code>attendance</code> array for attendance entries. It loops through these arrays to display students, search and filter records, calculate totals, and export a CSV file.</p></section>
+</main><footer>ClassTrack demo · Built to demonstrate arrays as a data structure</footer>
+<script src="app.js"></script>
+</body></html>
